@@ -1,0 +1,27 @@
+{% extends "classroom/base.html" %}
+{% load static %}
+{% block content %}
+<h1>Teacher delete: using DeleteView</h1>
+<!-- Conatiner -->
+<div class="container-fluid">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <h2>Do you really want to delete?</h2>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{teacher.f_name}} {{teacher.l_name}}</div>
+                        Teaches {{teacher.sub_name}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="d-grid gap-2">
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "classroom/base.html" %}
+{% load static %}
+{% block content %}
+<h1>Create Teacher: using CreateView</h1>
+<!-- Form -->
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">First Name</label>
+        {{form.f_name}}
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">Last Name</label>
+        {{form.l_name}}
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">Subject Name</label>
+        {{form.sub_name}}
+    </div>
+    <div class="d-grid gap-2">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+</form>
+
+{% endblock %}

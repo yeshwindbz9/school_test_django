@@ -1,0 +1,21 @@
+{% extends "classroom/base.html" %}
+{% load static %}
+{% block content %}
+<h1>Contact form: using FormView</h1>
+<!-- Form -->
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        {{form.email}}
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+        {{form.message}}
+    </div>
+    <div class="d-grid gap-2">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+</form>
+
+{% endblock %}
